@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canada Immigration Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+        header img {
+            width: 150px;
+        }
+        main {
+            max-width: 600px;
+            margin: 20px auto;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        main h1 {
+            text-align: center;
+            font-size: 24px;
+        }
+        main p {
+            text-align: center;
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        form input, form select, form button {
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        form button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        form button:hover {
+            background-color: #0056b3;
+        }
+        .email-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .email-link a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+        .email-link a:hover {
+            color: #0056b3;
+        }
+        @media (max-width: 768px) {
+            main {
+                padding: 10px;
+            }
+            form input, form select, form button {
+                font-size: 14px;
+            }
+        }
+    </style>
+    <script>
+        function validateForm(event) {
+            event.preventDefault();
+            const form = document.forms["registrationForm"];
+            const firstName = form["firstName"].value.trim();
+            const surname = form["surname"].value.trim();
+            const phone = form["phone"].value.trim();
+            const country = form["country"].value;
+            const province = form["province"].value.trim();
+            const gender = form["gender"].value;
+            const dob = form["dob"].value;
+
+            if (!firstName || !surname || !phone || !country || !province || !gender || !dob) {
+                alert("All fields are required!");
+                return false;
+            }
+
+            if (isNaN(phone) || phone.length < 10) {
+                alert("Please enter a valid phone number.");
+                return false;
+            }
+
+            alert("Thank you for registering! We will contact you soon.");
+            form.reset();
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <img src="canada-passport-flag.jpeg" alt="Canada Flag and passport">
+    </header>
+    <main>
+        <h1>Canada Immigration Registration</h1>
+        <p>Welcome to the Canada Immigration Registration Portal. Please provide your details to start your journey towards a new future in Canada.</p>
+        <form name="registrationForm" onsubmit="validateForm(event)">
+            <input type="text" name="firstName" placeholder="First Name" required>
+            <input type="text" name="surname" placeholder="Surname" required>
+            <input type="tel" name="phone" placeholder="Phone Number" required>
+            <select name="country" required>
+                <option value="">Select Country</option>
+                <option value="Bangladesh">Bangladesh</option>
+                <option value="Pakistan">Pakistan</option>
+                <option value="India">India</option>
+                <option value="Malaysia">Malaysia</option>
+                <option value="Dubai">Dubai</option>
+                <option value="Others">Others</option>
+            </select>
+            <input type="text" name="province" placeholder="Province" required>
+            <div>
+                <label><input type="radio" name="gender" value="Male" required> Male</label>
+                <label><input type="radio" name="gender" value="Female"> Female</label>
+            </div>
+            
+            
+        
+            <label for="dob">Date of Birth</label>
+            <input type="date" name="dob" id="dob" placeholder="Select your Date of Birth" required>
+            <button type="submit">Submit</button>
+        </form>
+        <div class="email-link">
+            <a href="mailto:jovitamaria001@gmail.com">Contact Us via Email</a>
+        </div>
+    </main>
+</body>
+</html>
